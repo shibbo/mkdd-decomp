@@ -261,7 +261,7 @@ for key in libraries:
     lib = libraries[key]
     d, f = lib.calculateProgress()
     libprog = (d / f) * 100.0
-    progressPage.append(f"| [{key}](https://github.com/shibbo/mkdd-decomp/blob/master/docs/lib/{key}.md) | {libprog}% |\n")
+    progressPage.append(f"| [{key}](https://github.com/shibbo/mkdd-decomp/blob/main/docs/lib/{key}.md) | {libprog}% |\n")
 
 with open("docs/PROGRESS.md", "w") as w:
     w.writelines(progressPage)
