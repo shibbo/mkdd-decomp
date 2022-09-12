@@ -100,10 +100,10 @@ def main(compile_non_matching, use_ninja, clean_ninja, link):
 
     isNotWindows = os.name != "nt"
 
-    flags = "-c -Cpp_exceptions off -nodefaults -proc gekko -use_lmw_stmw on -fp hard -lang=c++ -inline auto -rtti off -align powerpc -enum int -msgstyle gcc "
+    flags = "-c -Cpp_exceptions off -O4,p -nodefaults -proc gekko -use_lmw_stmw on -fp_contract on -fp fmadd -lang=c++ -sdata 4 -sdata2 4 -inline off -rtti off -align powerpc -enum int -msgstyle gcc "
     includes = "-i . -I- -i include "
 
-    default_compiler_path = pathlib.Path("GC/2.5/")
+    default_compiler_path = pathlib.Path("../../Compilers/GC/2.5/")
 
     compiler_exceptions = {
         #"source\JSystem\JKernel\JKRHeap.cpp": pathlib.Path("GC/1.2.5/")
@@ -117,10 +117,10 @@ def main(compile_non_matching, use_ninja, clean_ninja, link):
         print("Using nonmatching functions")
         flags = flags + " -DNON_MATCHING "
 
-    dol_sdk_path =      pathlib.Path("libs/Dolphin/include")
-    msl_c_path =        pathlib.Path("libs/MSL/include")
+    dol_sdk_path =      pathlib.Path("../Dolphin/include")
+    msl_c_path =        pathlib.Path("../MSL/include")
 
-    includes += f" -i {dol_sdk_path} -I- -i {msl_c_path} "
+    includes += f"-i {dol_sdk_path} -I- -i {msl_c_path} "
     flags += includes
 
     tasks = list()
@@ -150,7 +150,7 @@ def main(compile_non_matching, use_ninja, clean_ninja, link):
 
                 tasks.append((source_path, build_path))
 
-    compiler_path = pathlib.Path(f"../../Compilers/{default_compiler_path}/mwcceppc.exe ")
+    compiler_path = pathlib.Path(f"{default_compiler_path}/mwcceppc.exe ")
     if isNotWindows:
         compiler_path = pathlib.Path(f"wine {compiler_path} ")
 

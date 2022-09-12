@@ -117,7 +117,7 @@ def main(compile_non_matching, use_ninja, clean_ninja, link):
         print("Using nonmatching functions")
         flags = flags + " -DNON_MATCHING "
 
-    msl_c_path =        pathlib.Path("libs/MSL/include")
+    msl_c_path =        pathlib.Path("../MSL/include")
 
     includes += f"-I- -i {msl_c_path} "
     flags += includes

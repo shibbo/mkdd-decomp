@@ -1,0 +1,23 @@
+#ifndef CSTDIO_H
+#define CSTDIO_H
+
+#include <size_t.h>
+#include <va_list.h>
+
+#ifdef __cplusplus
+namespace std {
+	extern "C" {
+#endif
+
+int sprintf(char *, const char *, ...);
+int snprintf(char *, size_t, const char *, ...);
+
+int vsprintf(char *, const char *, va_list);
+int vprintf(const char *, va_list);
+
+#ifdef __cplusplus
+    };
+};
+#endif
+
+#endif // CSTDIO_H

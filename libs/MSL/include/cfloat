@@ -1,0 +1,20 @@
+#ifndef CFLOAT_H
+#define CFLOAT_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#define DBL_EXT_MIN     2.225073858507201e-308
+#define DBL_EXT_MAX     1.797693134862316e308
+#define FLT_MAX	        3.402823466e+38F
+#define FLT_EPSILON     1.192092896e-07F
+
+static float __float_max = FLT_MAX;
+static float __float_epsilon[] = { 0x34000000 };
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // CFLOAT_H
