@@ -50,7 +50,7 @@ def makeArchive(dir):
             if f.endswith(".o"):
                 fileList += f"build/Game/{dir}/{f} "
 
-    default_compiler_path = pathlib.Path("GC/3.0a3/")
+    default_compiler_path = pathlib.Path("GC/2.5/")
     linker_path = pathlib.Path(f"Compilers/{default_compiler_path}/mwldeppc.exe ")
     linker_flags = f"-nodefaults -xm l -o archives/{dir}.a {fileList}"
 
@@ -66,7 +66,7 @@ def makeLibArchive():
             makeArchive(dir)
 
 def makeElf():
-    default_compiler_path = pathlib.Path("GC/3.0a3/")
+    default_compiler_path = pathlib.Path("GC/1.0/")
 
     fileList = ""
 
@@ -94,13 +94,13 @@ def deleteDFiles():
             os.remove(os.path.join(os.getcwd(), dire))
 
 def main(compile_non_matching, use_ninja, clean_ninja, link):
-    if not os.path.exists("Compilers"):
+    if not os.path.exists("../../Compilers"):
         print("Compilers folder not created, please run setup.py!")
         sys.exit(1)
 
     isNotWindows = os.name != "nt"
 
-    flags = "-c -Cpp_exceptions off -nodefaults -proc gekko -fp hard -lang=c++ -inline auto -O4,p -rtti off -sdata 4 -sdata2 4 -align powerpc -enum int -DEPPC -DHOLLYWOOD_REV -DTRK_INTEGRATION -DGEKKO -DMTX_USE_PS -msgstyle gcc "
+    flags = "-c -Cpp_exceptions off -nodefaults -proc gekko -use_lmw_stmw on -fp hard -lang=c++ -inline auto -rtti off -align powerpc -enum int -msgstyle gcc "
     includes = "-i . -I- -i include "
 
     default_compiler_path = pathlib.Path("GC/2.5/")
@@ -117,11 +117,6 @@ def main(compile_non_matching, use_ninja, clean_ninja, link):
         print("Using nonmatching functions")
         flags = flags + " -DNON_MATCHING "
 
-    dol_sdk_path =      pathlib.Path("libs/Dolphin/include")
-    msl_c_path =        pathlib.Path("libs/MSL/include")
-    jsystem_path =      pathlib.Path("libs/JSystem/include")
-
-    includes += f" -i {dol_sdk_path} -I- -i {msl_c_path} -I- -i {jsystem_path} "
     flags += includes
 
     tasks = list()
@@ -151,7 +146,7 @@ def main(compile_non_matching, use_ninja, clean_ninja, link):
 
                 tasks.append((source_path, build_path))
 
-    compiler_path = pathlib.Path(f"Compilers/{default_compiler_path}/mwcceppc.exe ")
+    compiler_path = pathlib.Path(f"../../Compilers/{default_compiler_path}/mwcceppc.exe ")
     if isNotWindows:
         compiler_path = pathlib.Path(f"wine {compiler_path} ")
 
@@ -177,7 +172,7 @@ def main(compile_non_matching, use_ninja, clean_ninja, link):
             try:
                 if compiler_exceptions[source_path]:
                     rule = exceptionsToRules[compiler_exceptions[source_path]]
-                    path = f"Compilers/{compiler_exceptions[source_path]}/mwcceppc.exe "
+                    path = f"../../Compilers/{compiler_exceptions[source_path]}/mwcceppc.exe "
                     nw.rule(f"{rule}", f"{path} $flags $in -o $out", "Compiling $in [With different compiler]...")
             except:
                 pass
@@ -199,7 +194,7 @@ def main(compile_non_matching, use_ninja, clean_ninja, link):
 
             try:
                 if compiler_exceptions[source_path]:
-                    compiler_path = pathlib.Path(f"Compilers/{compiler_exceptions[source_path]}/mwcceppc.exe ")
+                    compiler_path = pathlib.Path(f"../../Compilers/{compiler_exceptions[source_path]}/mwcceppc.exe ")
                     if isNotWindows:
                         compiler_path = pathlib.Path(f"wine {compiler_path} ")
             except:

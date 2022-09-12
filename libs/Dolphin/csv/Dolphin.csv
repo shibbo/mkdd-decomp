@@ -13,11 +13,6 @@ TRK_memset,mem_TRK.c,Dolphin.a,false
 TRK_memcpy,mem_TRK.c,Dolphin.a,false
 __TRK_reset,dolphin_trk.c,Dolphin.a,false
 extab,NMWException.cp,Dolphin.a,false
-@205,NMWException.cp,Dolphin.a,false
-@210,NMWException.cp,Dolphin.a,false
-@231,NMWException.cp,Dolphin.a,false
-@239,NMWException.cp,Dolphin.a,false
-@262,NMWException.cp,Dolphin.a,false
 PPCMfmsr,PPCArch.c,Dolphin.a,false
 PPCMtmsr,PPCArch.c,Dolphin.a,false
 PPCMfhid0,PPCArch.c,Dolphin.a,false
