@@ -8,7 +8,6 @@
 
 | Object | Percentage (of Bytes) | Functions Done / Total Functions | Percentage (Functions) | Status 
 | ------------- | ------------- | ------------- | ------------- | ------------- 
-| J3DUPerf.o | 0.0% | 0 / 1 | 0.0% | :x: 
 | J3DUDL.o | 0.0% | 0 / 1 | 0.0% | :x: 
 | J3DUMotion.o | 0.0% | 0 / 54 | 0.0% | :x: 
 | J3DUClipper.o | 0.0% | 0 / 4 | 0.0% | :x: 
@@ -87,7 +86,7 @@
 | JMath.o | 0.0% | 0 / 5 | 0.0% | :x: 
 | random.o | 0.0% | 0 / 1 | 0.0% | :x: 
 | JMATrigonometric.o | 0.0% | 0 / 3 | 0.0% | :x: 
-| JUTAssert.o | 0.0% | 0 / 8 | 0.0% | :x: 
+| JUTAssert.o | 0.35149384885764495% | 1 / 8 | 12.5% | :eight_pointed_black_star: 
 | JUTConsole.o | 0.0% | 0 / 30 | 0.0% | :x: 
 | JUTDbPrint.o | 0.0% | 0 / 7 | 0.0% | :x: 
 | JUTDirectFile.o | 0.0% | 0 / 5 | 0.0% | :x: 
@@ -211,12 +210,6 @@
 | JAUAudience.o | 0.0% | 0 / 26 | 0.0% | :x: 
 | JAUSectionHeap.o | 0.0% | 0 / 43 | 0.0% | :x: 
 | JAUSoundObject.o | 0.0% | 0 / 13 | 0.0% | :x: 
-
-
-# J3DUPerf.o
-| Symbol | Decompiled? |
-| ------------- | ------------- |
-| __sinit_J3DUPerf_cpp | :x: |
 
 
 # J3DUDL.o
@@ -3057,7 +3050,7 @@
 | create__12JUTAssertionFv | :x: |
 | flushMessage__12JUTAssertionFv | :x: |
 | flushMessage_dbPrint__12JUTAssertionFv | :x: |
-| getSDevice__12JUTAssertionFv | :x: |
+| getSDevice__12JUTAssertionFv | :white_check_mark: |
 | setConfirmMessage__12JUTAssertionFUlPcibPCc | :x: |
 | showAssert_f__12JUTAssertionFUlPCciPCce | :x: |
 | setWarningMessage_f__12JUTAssertionFUlPciPCce | :x: |

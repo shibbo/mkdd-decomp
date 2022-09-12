@@ -1,3 +1,3 @@
 | Library | Percentage |
 | ------------- | ------------- |
-| [JSystemM](https://github.com/shibbo/mkdd-decomp/blob/main/libs/JSystem/docs/lib/JSystemM.md) | 0.0% |
+| [JSystemM](https://github.com/shibbo/mkdd-decomp/blob/main/libs/JSystem/docs/lib/JSystemM.md) | 0.0011534025374855825% |

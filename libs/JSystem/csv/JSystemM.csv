@@ -1,4 +1,4 @@
-__sinit_J3DUPerf_cpp,J3DUPerf.o,JSystemM.a,false
+Symbol Name, Object File, Library Archive, Matching
 getUseMtxNum__11J3DShapeMtxCFv,J3DUDL.o,JSystemM.a,false
 J3DUNewMtxCalcAnm__FUlP15J3DAnmTransformP15J3DAnmTransformP15J3DAnmTransformP15J3DAnmTransform14J3DMtxCalcFlag,J3DUMotion.o,JSystemM.a,false
 setWeight__10J3DMtxCalcFUcf,J3DUMotion.o,JSystemM.a,false
@@ -2444,7 +2444,7 @@ __ct__Q23std9pair<f&#44;f>Fv,JMATrigonometric.o,JSystemM.a,false
 create__12JUTAssertionFv,JUTAssert.o,JSystemM.a,false
 flushMessage__12JUTAssertionFv,JUTAssert.o,JSystemM.a,false
 flushMessage_dbPrint__12JUTAssertionFv,JUTAssert.o,JSystemM.a,false
-getSDevice__12JUTAssertionFv,JUTAssert.o,JSystemM.a,false
+getSDevice__12JUTAssertionFv,JUTAssert.o,JSystemM.a,true
 setConfirmMessage__12JUTAssertionFUlPcibPCc,JUTAssert.o,JSystemM.a,false
 showAssert_f__12JUTAssertionFUlPCciPCce,JUTAssert.o,JSystemM.a,false
 setWarningMessage_f__12JUTAssertionFUlPciPCce,JUTAssert.o,JSystemM.a,false
